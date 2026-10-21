@@ -1,4 +1,5 @@
-import { NavLink } from "react-router";
+
+
 import {
   House,
   ShoppingCart,
@@ -10,46 +11,52 @@ import {
   Settings,
 } from "lucide-react";
 
-
-
-const menuItems = [
-  { name: "Home", path: "/", icon: House },
-  { name: "New Sale", path: "/sales/new", icon: ShoppingCart },
-  { name: "Products", path: "/products", icon: Package },
-  { name: "Inventory", path: "/inventory", icon: Boxes },
-  { name: "Sales History", path: "/sales/history", icon: History },
-  { name: "Reports", path: "/reports", icon: ChartNoAxesColumn },
-  { name: "Staff Management", path: "/staff", icon: Users },
-  { name: "Settings", path: "/settings", icon: Settings },
-];
-
 function Sidebar() {
   return (
-    <aside className="min-h-screen w-64 bg-black p-5 text-white">
-      <h2 className="mb-8 text-xl font-bold">Loseyi Mart</h2>
-
+    <aside className="min-h-screen w-40 bg-black p-5 text-white">
       <nav className="space-y-2">
-        {menuItems.map(({ name, path, icon: Icon }) => (
-          <NavLink
-            key={path}
-            to={path}
-            end={path === "/"}
-            className={({ isActive }) =>
-              `flex items-center gap-3 rounded-lg px-4 py-3 transition ${
-                isActive
-                  ? "bg-white text-black"
-                  : "text-white hover:bg-gray-800"
-              }`
-            }
-          >
-            <Icon size={20} />
-            <span>{name}</span>
-          </NavLink>
-        ))}
+        <div className="flex items-center gap-3 rounded-lg px-4 py-3 transition hover:bg-gray-800">
+          <House size={20} /><br/>
+          <span>Da</span>
+        </div>
+
+        <div className="flex items-center gap-3 rounded-lg px-4 py-3 transition hover:bg-gray-800">
+          <ShoppingCart size={20} />
+          <span>New Sale</span>
+        </div>
+
+        <div className="flex items-center gap-3 rounded-lg px-4 py-3 transition hover:bg-gray-800">
+          <Package size={20} />
+          <span>Products</span>
+        </div>
+
+        <div className="flex items-center gap-3 rounded-lg px-4 py-3 transition hover:bg-gray-800">
+          <Boxes size={20} />
+          <span>Inventory</span>
+        </div>
+
+        <div className="flex items-center gap-3 rounded-lg px-4 py-3 transition hover:bg-gray-800">
+          <History size={20} />
+          <span>Sales History</span>
+        </div>
+
+        <div className="flex items-center gap-3 rounded-lg px-4 py-3 transition hover:bg-gray-800">
+          <ChartNoAxesColumn size={20} />
+          <span>Reports</span>
+        </div>
+
+        <div className="flex items-center gap-3 rounded-lg px-4 py-3 transition hover:bg-gray-800">
+          <Users size={20} />
+          <span>Staff Management</span>
+        </div>
+
+        <div className="flex items-center gap-3 rounded-lg px-4 py-3 transition hover:bg-gray-800">
+          <Settings size={20} />
+          <span>Settings</span>
+        </div>
       </nav>
     </aside>
   );
 }
 
-
-export default  Sidebar
+export default Sidebar;

@@ -3,9 +3,9 @@ import {Bell} from 'lucide-react';
 
 function Navbar() {
   return (
-    <div className='flex items-center gap-3 justify-between bg-white shadow '>
+    <div className='flex items-center gap-3 justify-between bg-white shadow  '>
       <div className='flex gap-4'>
-        <h2 className='text-xl font-bold'>Loseyi mart</h2>
+        <h2 className='text-2xl font-bold text-amber-400'>Loseyi mart</h2>
         <h4 className='text-sm text-gray-500'>POS system</h4>
         </div>      
      <input type="text" placeholder=' search products by name or barcode'
