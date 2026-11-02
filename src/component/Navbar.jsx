@@ -15,7 +15,7 @@ function Navbar() {
   const { cashier, sales, logout } = useCashier();
      const {name} = cashier
   return (
-    <div className='flex items-center gap-3 justify-between bg-blue-700 shadow p-2.5  '>
+    <div className='flex items-center sticky top-0 gap-3 justify-between bg-blue-700 shadow p-2.5 z-[999] '>
       <div className='flex gap-4'>
         <h2 className='text-4xl font-bold text-amber-400'>EXCELLENT </h2>
         <h4 className='text-3xl text-amber-400'>SUPERMARKET</h4>

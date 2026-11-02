@@ -9,7 +9,9 @@ import Dashboard from "../Pages/Dashboard";
 import Products from "../Pages/Products";
 import POS from "../Pages/pos";
 import SalesHistory from "../Pages/SaleHistory";
+import SalesReport from "../Pages/Report";
 import Inventory from "../component/ProductSearch";
+
 
 export default function AppRoutes() {
   return (
@@ -20,7 +22,9 @@ export default function AppRoutes() {
       <Route path="/products"  element={<Products/>}/>
       <Route path="/inventory"  element={<Inventory/>}/>
       <Route path="/sales-history" element={<SalesHistory />} />
+       <Route path="/sales-report"  element={<SalesReport/>}/>
       <Route path="*" element={<Navigate to="/dashboard" replace />} />
+     
     </Routes>
   );
 }

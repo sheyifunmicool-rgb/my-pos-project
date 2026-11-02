@@ -8,6 +8,7 @@ import {
   Package,
   Boxes,
   History,
+  ChartNoAxesCombined,
 } from "lucide-react";
 
 export default function Sidebar() {
@@ -24,10 +25,11 @@ export default function Sidebar() {
       path: "/sales-history",
       Icon: History,
     },
+   { name: "Sales Report", path: "/sales-report", Icon: ChartNoAxesCombined },
   ];
 
   return (
-    <aside className="sticky top-20 min-h-screen w-40 shrink-0 bg-black p-5 text-white">
+    <aside className="sticky top-20 min-h-screen w-40 shrink-0 bg-black p-5 text-white z-50">
       <nav className="space-y-2">
         {menuItems.map(({ name, path, Icon }) => (
           <NavLink

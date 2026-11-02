@@ -1,8 +1,10 @@
 
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, useRef, useEffect } from "react";
 import { useProducts} from "../context/productProvider";
 import { useCashier } from "../context/CashierContext";
 export default function Products() {
+  const formRef = useRef(null);
+  
   const { products = [], addProduct, updateProduct, deleteProduct } =
     useProducts();
 
@@ -18,6 +20,14 @@ export default function Products() {
     price: "",
     stock: "",
   };
+  useEffect(() => {
+  if (showForm) {
+    formRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+}, [showForm]);
  console.log(cashier)
   const [form, setForm] = useState(emptyForm);
 
@@ -186,7 +196,7 @@ export default function Products() {
 
         {/* Product Form */}
         {showForm && (
-          <div className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
+          <div ref={formRef} className="rounded-2xl border border-slate-200 bg-white p-5 shadow-sm sm:p-6">
             <div className="mb-5 flex items-center justify-between">
               <h2 className="text-lg font-bold text-slate-900">
                 {editingId !== null ? "Edit Product" : "Add New Product"}
